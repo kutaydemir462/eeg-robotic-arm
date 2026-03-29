@@ -8,12 +8,26 @@ An end-to-end system for controlling a commercial robotic arm using EEG brain si
 
 ---
 
+## 📂 Project Files (Google Drive)
+
+> Full project files including test videos, EEG data, and training stimuli:
+> **[🔗 EEG Controlled Robotic Arm — Google Drive](https://drive.google.com/drive/folders/1q6Skyh8Njz4_8ewI-p6whcAgoy9CtzqY?usp=sharing)**
+
+| Folder | Contents |
+|---|---|
+| `Training Stimuli/` | Videos shown to subjects to elicit motor imagery |
+| `test videos time-lapse/` | Speed-up recordings of arm movement tests |
+| `test videos raw/` | Raw footage of arm movement sessions |
+| `EEG Data/` | BrainVision format recordings (`.eeg`, `.vhdr`, `.vmrk`) from 2 subjects |
+
+---
+
 ## 📌 Project Overview
 
 | Component | Description |
 |---|---|
 | **Hardware** | Commercial robotic arm + Raspberry Pi + PCA9685 |
-| **EEG Data** | Collected from C3/C4 channels (human subjects) |
+| **EEG Data** | Motor imagery data collected from 2 subjects (C3/C4 channels, BrainVision format) |
 | **Control Modes** | Keyboard, REST API, Gyroscope/motion controller |
 | **RL Algorithm** | SAC (Soft Actor-Critic) + HER, trained in PyBullet simulation |
 | **Goal** | Map EEG brain signals → arm movement via trained RL policy |
