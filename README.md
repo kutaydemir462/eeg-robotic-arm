@@ -4,7 +4,7 @@
 
 An end-to-end system for controlling a commercial robotic arm using EEG brain signals, built on a Raspberry Pi with a PCA9685 servo driver. The project combines inverse kinematics, a REST API control layer, motion-sensor input, and a reinforcement learning pipeline for autonomous pick-and-place tasks.
 
-> 🚧 **Status:** EEG data collection complete. Keyboard & controller control working. RL training in progress.
+> 🚧 **Status:** EEG data collected. Keyboard & controller control working. RL training in progress.
 
 ---
 
