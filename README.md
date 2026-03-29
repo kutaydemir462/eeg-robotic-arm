@@ -143,6 +143,3 @@ Developed as part of the MEF University Computer Engineering Senior Design Progr
 
 ---
 
-## 📄 License
-
-MIT
