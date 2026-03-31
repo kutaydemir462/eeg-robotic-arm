@@ -1,5 +1,5 @@
 """
-ROBOTKOL - Merkezi Konfigürasyon Dosyası (v4 - Contact-Based Rewards)
+ROBOT ARM - Central Configuration File (v4 - Contact-Based Rewards)
 """
 import os
 
@@ -61,7 +61,7 @@ GOAL_DIM = 3
 ACTION_DIM = 6
 
 # ============================================================
-# REWARD (v4 — fiziksel temas, tek seferlik bonuslar)
+# REWARD (v4 — physical contact, one-time bonuses)
 # ============================================================
 REWARD_TYPE = "dense"
 REWARD_WEIGHTS = {
