@@ -1,0 +1,76 @@
+BrainVision Data Exchange Marker File Version 1.0
+
+[Common Infos]
+Codepage=UTF-8
+DataFile=Bedri331.eeg
+
+[Marker Infos]
+; Each entry: Mk<Marker number>=<Type>,<Description>,<Position in data points>,
+; <Size in data points>, <Channel number (0 = marker is related to all channels)>
+; Fields are delimited by commas, some fields might be omitted (empty).
+; Commas in type or description text are coded as "\1".
+Mk1=New Segment,,1,1,0,20260331073237617903
+Mk2=Primary,P  1,3885,1,0
+Mk3=Primary,P  1,8815,1,0
+Mk4=Primary,P  1,13711,1,0
+Mk5=Primary,P  1,18605,1,0
+Mk6=Primary,P  1,23477,1,0
+Mk7=Primary,P  1,28348,1,0
+Mk8=Primary,P  1,33215,1,0
+Mk9=Primary,P  1,38078,1,0
+Mk10=Primary,P  1,42955,1,0
+Mk11=Primary,P  1,47820,1,0
+Mk12=Primary,P  1,52691,1,0
+Mk13=Primary,P  1,57586,1,0
+Mk14=Primary,P  1,62453,1,0
+Mk15=Primary,P  1,67307,1,0
+Mk16=Primary,P  1,72225,1,0
+Mk17=Primary,P  1,77123,1,0
+Mk18=Primary,P  1,82002,1,0
+Mk19=Primary,P  1,86940,1,0
+Mk20=Primary,P  1,91796,1,0
+Mk21=Primary,P  1,96676,1,0
+Mk22=Primary,P  1,101547,1,0
+Mk23=Primary,P  1,106415,1,0
+Mk24=Primary,P  1,111300,1,0
+Mk25=Primary,P  1,116175,1,0
+Mk26=Primary,P  1,121033,1,0
+Mk27=Primary,P  1,125900,1,0
+Mk28=Primary,P  1,130781,1,0
+Mk29=Primary,P  1,135664,1,0
+Mk30=Primary,P  1,140546,1,0
+Mk31=Primary,P  1,145536,1,0
+Mk32=Primary,P  1,150438,1,0
+Mk33=Primary,P  1,155303,1,0
+Mk34=Primary,P  1,160200,1,0
+Mk35=Primary,P  1,165072,1,0
+Mk36=Primary,P  1,169948,1,0
+Mk37=Primary,P  1,174815,1,0
+Mk38=Primary,P  1,179677,1,0
+Mk39=Primary,P  1,184542,1,0
+Mk40=Primary,P  1,189409,1,0
+Mk41=Primary,P  1,194266,1,0
+Mk42=Primary,P  1,199143,1,0
+Mk43=Primary,P  1,204019,1,0
+Mk44=Primary,P  1,208884,1,0
+Mk45=Primary,P  1,213800,1,0
+Mk46=Primary,P  1,218989,1,0
+Mk47=Primary,P  1,223880,1,0
+Mk48=Primary,P  1,228762,1,0
+Mk49=Primary,P  1,233635,1,0
+Mk50=Primary,P  1,238498,1,0
+Mk51=Primary,P  1,243362,1,0
+Mk52=Primary,P  1,248216,1,0
+Mk53=Primary,P  1,253072,1,0
+Mk54=Primary,P  1,257920,1,0
+Mk55=Primary,P  1,262839,1,0
+Mk56=Primary,P  1,267744,1,0
+Mk57=Primary,P  1,272618,1,0
+Mk58=Primary,P  1,277493,1,0
+Mk59=Primary,P  1,282579,1,0
+Mk60=Primary,P  1,287573,1,0
+Mk61=Primary,P  1,292508,1,0
+Mk62=Primary,P  1,297397,1,0
+Mk63=Primary,P  1,302253,1,0
+Mk64=Primary,P  1,307137,1,0
+Mk65=Primary,P  1,312019,1,0

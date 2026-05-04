@@ -1,0 +1,62 @@
+====================================================================
+  MINDSARM – EEG PREPROCESSING REPORT
+  Participant: Bedri (Bedri331)
+  Date processed: 2026-04-28 18:44
+====================================================================
+
+RECORDING DETAILS
+----------------------------------------
+  File              : Bedri331.vhdr / .eeg / .vmrk
+  Duration          : 665.0 s (11.1 min)
+  Sampling rate     : 500 Hz
+  EEG channels      : 32
+  Aux channels      : 3 accelerometers (x_dir, y_dir, z_dir)
+  Total trials      : 64
+
+PREPROCESSING STEPS
+----------------------------------------
+
+  STEP 1 – BAD CHANNEL DETECTION & INTERPOLATION
+    Bad found  : 0 — None
+    Action     : No interpolation needed
+
+  STEP 2 – BANDPASS FILTER
+    Type       : FIR (zero-phase)
+    Passband   : 0.2 – 100.0 Hz
+
+  STEP 3 – NOTCH FILTER
+    Type       : FIR (zero-phase)
+    Stopband   : 48.0 – 52.0 Hz
+
+  STEP 4 – AVERAGE REFERENCE
+    Method     : Common average reference (CAR)
+
+  STEP 5 – ICA – EYE BLINK REMOVAL
+    Method     : FastICA, 15 components
+    Detection  : Fp1/Fp2 correlation (z-threshold = 3.0)
+    Excluded   : Component(s) [1]
+
+  STEP 6 – EPOCHING
+    Window     : -1.0 to +4.0 s around stimulus onset
+    Baseline   : -1.0 to 0.0 s
+    Total epochs created : 64
+
+  STEP 7 – EPOCH REJECTION
+    Amplitude criterion : >200 µV peak-to-peak in any 100 ms window
+    Motion criterion    : Accelerometer jerk > 20.0 mg/sample
+    Rejected (amplitude): 4
+    Rejected (motion)   : 0
+    KEPT                : 60 / 64 (93.8%)
+
+CLEAN DATA SUMMARY
+----------------------------------------
+  Epochs retained   : 60 / 64 (93.8%)
+  Output files      : .\Bedri_raw_preprocessed.fif
+                      .\Bedri_epochs_clean.fif
+                      .\Bedri_epochs_labeled.csv
+
+====================================================================
+  Preprocessing method based on instructor notes (Prof. Dr. Tuna Çakar):
+  artifact reduction, eye blink removal, head movement detection,
+  48.0–52.0 Hz notch, 0.2–100.0 Hz bandpass, 200 µV / 100 ms rejection.
+====================================================================

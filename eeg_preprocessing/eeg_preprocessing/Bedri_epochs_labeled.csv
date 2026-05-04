@@ -1,0 +1,65 @@
+trial,label,ptp_uv,status
+1,New Segment/,139.7,KEPT
+2,Stimulus/Arkadan Aşağı Hareket,373.2,KEPT
+3,Stimulus/Arkadan Yukarı Hareket,203.4,KEPT
+4,Stimulus/Arkadan Sağ Hareket,337.0,KEPT
+5,Stimulus/Arkadan Sol Hareket,172.7,KEPT
+6,Stimulus/Arkadan İleri Hareket,163.6,KEPT
+7,Stimulus/Arkadan Geri Hareket,269.2,KEPT
+8,Stimulus/Önden Aşağı Hareket,246.6,KEPT
+9,Stimulus/Önden Yukarı Hareket,152.1,KEPT
+10,Stimulus/Önden Sağa Hareket,140.3,KEPT
+11,Stimulus/Önden Sola Hareket,448.5,REJECT
+12,Stimulus/Önden İleri Hareket,159.5,KEPT
+13,Stimulus/Önden Geri Hareket,190.7,KEPT
+14,Stimulus/Arkadan Kıskaç Açma Hareketi,120.3,KEPT
+15,Stimulus/Arkadan Kıskaç Kapama Hareketi,122.3,KEPT
+16,Stimulus/Önden Kıskaç Açma Hareketi,115.6,KEPT
+17,Stimulus/Önden Kıskaç Kapama Hareketi,107.4,KEPT
+18,Stimulus/Arkadan Aşağı Hareket,136.8,KEPT
+19,Stimulus/Arkadan Yukarı Hareket,242.9,KEPT
+20,Stimulus/Arkadan Sağ Hareket,112.0,KEPT
+21,Stimulus/Arkadan Sol Hareket,147.7,KEPT
+22,Stimulus/Arkadan İleri Hareket,157.5,KEPT
+23,Stimulus/Arkadan Geri Hareket,111.0,KEPT
+24,Stimulus/Önden Aşağı Hareket,253.3,REJECT
+25,Stimulus/Önden Yukarı Hareket,133.4,KEPT
+26,Stimulus/Önden Sağa Hareket,144.2,KEPT
+27,Stimulus/Önden Sola Hareket,224.8,REJECT
+28,Stimulus/Önden İleri Hareket,130.9,KEPT
+29,Stimulus/Önden Geri Hareket,121.2,KEPT
+30,Stimulus/Arkadan Kıskaç Açma Hareketi,154.2,KEPT
+31,Stimulus/Arkadan Kıskaç Kapama Hareketi,112.1,KEPT
+32,Stimulus/Önden Kıskaç Açma Hareketi,157.9,KEPT
+33,Stimulus/Önden Kıskaç Kapama Hareketi,137.4,KEPT
+34,Stimulus/Arkadan Aşağı Hareket,153.3,KEPT
+35,Stimulus/Arkadan Yukarı Hareket,101.0,KEPT
+36,Stimulus/Arkadan Sağ Hareket,195.2,KEPT
+37,Stimulus/Arkadan Sol Hareket,207.6,REJECT
+38,Stimulus/Arkadan İleri Hareket,154.8,KEPT
+39,Stimulus/Arkadan Geri Hareket,115.5,KEPT
+40,Stimulus/Önden Aşağı Hareket,221.0,KEPT
+41,Stimulus/Önden Yukarı Hareket,192.3,KEPT
+42,Stimulus/Önden Sağa Hareket,110.9,KEPT
+43,Stimulus/Önden Sola Hareket,130.6,KEPT
+44,Stimulus/Önden İleri Hareket,244.7,KEPT
+45,Stimulus/Önden Geri Hareket,124.7,KEPT
+46,Stimulus/Arkadan Kıskaç Açma Hareketi,163.3,KEPT
+47,Stimulus/Arkadan Kıskaç Kapama Hareketi,174.2,KEPT
+48,Stimulus/Önden Kıskaç Açma Hareketi,354.4,KEPT
+49,Stimulus/Önden Kıskaç Kapama Hareketi,183.4,KEPT
+50,Stimulus/Arkadan Aşağı Hareket,333.7,KEPT
+51,Stimulus/Arkadan Yukarı Hareket,132.0,KEPT
+52,Stimulus/Arkadan Sağ Hareket,154.0,KEPT
+53,Stimulus/Arkadan Sol Hareket,165.3,KEPT
+54,Stimulus/Arkadan İleri Hareket,115.3,KEPT
+55,Stimulus/Arkadan Geri Hareket,160.9,KEPT
+56,Stimulus/Önden Aşağı Hareket,129.7,KEPT
+57,Stimulus/Önden Yukarı Hareket,185.8,KEPT
+58,Stimulus/Önden Sağa Hareket,178.7,KEPT
+59,Stimulus/Önden Sola Hareket,145.4,KEPT
+60,Stimulus/Önden İleri Hareket,175.4,KEPT
+61,Stimulus/Önden Geri Hareket,153.3,KEPT
+62,Stimulus/Arkadan Kıskaç Açma Hareketi,295.6,KEPT
+63,Stimulus/Arkadan Kıskaç Kapama Hareketi,141.5,KEPT
+64,Stimulus/Önden Kıskaç Açma Hareketi,133.3,KEPT

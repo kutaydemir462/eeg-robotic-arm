@@ -1,0 +1,76 @@
+BrainVision Data Exchange Marker File Version 1.0
+
+[Common Infos]
+Codepage=UTF-8
+DataFile=Bedri331.eeg
+
+[Marker Infos]
+; Each entry: Mk<Marker number>=<Type>,<Description>,<Position in data points>,
+; <Size in data points>, <Channel number (0 = marker is related to all channels)>
+; Fields are delimited by commas, some fields might be omitted (empty).
+; Commas in type or description text are coded as "\1".
+Mk1=New Segment,,1,1,0,20260331073237617903
+Mk2=Stimulus,Arkadan Aşağı Hareket,3885,2135,0
+Mk3=Stimulus,Arkadan Yukarı Hareket,8815,2129,0
+Mk4=Stimulus,Arkadan Sağ Hareket,13711,2124,0
+Mk5=Stimulus,Arkadan Sol Hareket,18605,2105,0
+Mk6=Stimulus,Arkadan İleri Hareket,23477,2123,0
+Mk7=Stimulus,Arkadan Geri Hareket,28348,2109,0
+Mk8=Stimulus,Önden Aşağı Hareket,33215,2106,0
+Mk9=Stimulus,Önden Yukarı Hareket,38078,2127,0
+Mk10=Stimulus,Önden Sağa Hareket,42955,2109,0
+Mk11=Stimulus,Önden Sola Hareket,47820,2107,0
+Mk12=Stimulus,Önden İleri Hareket,52691,2134,0
+Mk13=Stimulus,Önden Geri Hareket,57586,2114,0
+Mk14=Stimulus,Arkadan Kıskaç Açma Hareketi,62453,2110,0
+Mk15=Stimulus,Arkadan Kıskaç Kapama Hareketi,67307,2119,0
+Mk16=Stimulus,Önden Kıskaç Açma Hareketi,72225,2128,0
+Mk17=Stimulus,Önden Kıskaç Kapama Hareketi,77123,2125,0
+Mk18=Stimulus,Arkadan Aşağı Hareket,82002,2108,0
+Mk19=Stimulus,Arkadan Yukarı Hareket,86940,2107,0
+Mk20=Stimulus,Arkadan Sağ Hareket,91796,2115,0
+Mk21=Stimulus,Arkadan Sol Hareket,96676,2113,0
+Mk22=Stimulus,Arkadan İleri Hareket,101547,2128,0
+Mk23=Stimulus,Arkadan Geri Hareket,106415,2131,0
+Mk24=Stimulus,Önden Aşağı Hareket,111300,2127,0
+Mk25=Stimulus,Önden Yukarı Hareket,116175,2108,0
+Mk26=Stimulus,Önden Sağa Hareket,121033,2124,0
+Mk27=Stimulus,Önden Sola Hareket,125900,2126,0
+Mk28=Stimulus,Önden İleri Hareket,130781,2112,0
+Mk29=Stimulus,Önden Geri Hareket,135664,2104,0
+Mk30=Stimulus,Arkadan Kıskaç Açma Hareketi,140546,2127,0
+Mk31=Stimulus,Arkadan Kıskaç Kapama Hareketi,145536,2129,0
+Mk32=Stimulus,Önden Kıskaç Açma Hareketi,150438,2106,0
+Mk33=Stimulus,Önden Kıskaç Kapama Hareketi,155303,2129,0
+Mk34=Stimulus,Arkadan Aşağı Hareket,160200,2110,0
+Mk35=Stimulus,Arkadan Yukarı Hareket,165072,2105,0
+Mk36=Stimulus,Arkadan Sağ Hareket,169948,2104,0
+Mk37=Stimulus,Arkadan Sol Hareket,174815,2108,0
+Mk38=Stimulus,Arkadan İleri Hareket,179677,2105,0
+Mk39=Stimulus,Arkadan Geri Hareket,184542,2106,0
+Mk40=Stimulus,Önden Aşağı Hareket,189409,2107,0
+Mk41=Stimulus,Önden Yukarı Hareket,194266,2107,0
+Mk42=Stimulus,Önden Sağa Hareket,199143,2124,0
+Mk43=Stimulus,Önden Sola Hareket,204019,2107,0
+Mk44=Stimulus,Önden İleri Hareket,208884,2110,0
+Mk45=Stimulus,Önden Geri Hareket,213800,2106,0
+Mk46=Stimulus,Arkadan Kıskaç Açma Hareketi,218989,2120,0
+Mk47=Stimulus,Arkadan Kıskaç Kapama Hareketi,223880,2106,0
+Mk48=Stimulus,Önden Kıskaç Açma Hareketi,228762,2124,0
+Mk49=Stimulus,Önden Kıskaç Kapama Hareketi,233635,2110,0
+Mk50=Stimulus,Arkadan Aşağı Hareket,238498,2107,0
+Mk51=Stimulus,Arkadan Yukarı Hareket,243362,2104,0
+Mk52=Stimulus,Arkadan Sağ Hareket,248216,2110,0
+Mk53=Stimulus,Arkadan Sol Hareket,253072,2104,0
+Mk54=Stimulus,Arkadan İleri Hareket,257920,2131,0
+Mk55=Stimulus,Arkadan Geri Hareket,262839,2128,0
+Mk56=Stimulus,Önden Aşağı Hareket,267744,2111,0
+Mk57=Stimulus,Önden Yukarı Hareket,272618,2113,0
+Mk58=Stimulus,Önden Sağa Hareket,277493,2111,0
+Mk59=Stimulus,Önden Sola Hareket,282579,2107,0
+Mk60=Stimulus,Önden İleri Hareket,287573,2126,0
+Mk61=Stimulus,Önden Geri Hareket,292508,2128,0
+Mk62=Stimulus,Arkadan Kıskaç Açma Hareketi,297397,2104,0
+Mk63=Stimulus,Arkadan Kıskaç Kapama Hareketi,302253,2115,0
+Mk64=Stimulus,Önden Kıskaç Açma Hareketi,307137,2109,0
+Mk65=Stimulus,Önden Kıskaç Kapama Hareketi,312019,2105,0
