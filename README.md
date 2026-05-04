@@ -1,6 +1,6 @@
 # 🦾 EEG-Controlled Robotic Arm
 
-**Senior Design Thesis — MEF University, Computer Engineering (2025–2026)**
+**Senior Design Thesis - MEF University, Computer Engineering (2025–2026)**
 
 An end-to-end system for controlling a robotic arm using EEG brain signals. The project integrates EEG signal processing, robotic control, and reinforcement learning to enable brain-driven interaction with a physical robotic system.
 
