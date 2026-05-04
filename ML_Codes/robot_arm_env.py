@@ -1,8 +1,8 @@
 """
-ROBOTKOL - PyBullet Robot Kol Environment (v4 - Contact-Based Rewards)
+ROBOTARM - PyBullet Robot Arm Environment (v4 - Contact-Based Rewards)
 ======================================================================
-Fiziksel temas algılama ile hack-proof kavrama reward sistemi.
-p.getContactPoints() kullanarak gerçek parmak-şişe temasını tespit eder.
+Physical contact detection and hack-proof grip reward system.
+It detects actual finger-bottle contact using p.getContactPoints().
 """
 
 import numpy as np
@@ -26,18 +26,18 @@ class RobotArmPickPlaceEnv(gym.Env):
         self.goal_visual_id = None
         self.goal_position = np.zeros(3)
 
-        # Durum takibi
+        # Status monitoring
         self._bottle_initial_z = 0.0
         self._bottle_was_lifted = False
         self._prev_bottle_pos = np.zeros(3)
 
-        # Tek seferlik reward flag'leri
+        # One-time reward flags
         self._flag_single_contact = False
         self._flag_dual_contact = False
         self._flag_grasp = False
         self._flag_lift = False
 
-        # PyBullet bağlantısı
+        # PyBullet connection
         if self.render_mode == "human":
             self.physics_client = p.connect(p.GUI)
             p.configureDebugVisualizer(p.COV_ENABLE_GUI, 0)
@@ -68,7 +68,7 @@ class RobotArmPickPlaceEnv(gym.Env):
         self.step_counter = 0
         self._bottle_was_lifted = False
 
-        # Flag'leri sıfırla
+        # Reset Flags
         self._flag_single_contact = False
         self._flag_dual_contact = False
         self._flag_grasp = False
@@ -127,12 +127,12 @@ class RobotArmPickPlaceEnv(gym.Env):
         obs = self._get_obs()
         info = self._get_info()
 
-        # Kaldırma takibi
+        # Lifting tracking
         if info["bottle_height"] > cfg.LIFT_HEIGHT:
             self._bottle_was_lifted = True
         info["bottle_was_lifted"] = self._bottle_was_lifted
 
-        # Reward hesapla
+        # Calculate Reward
         reward = self._compute_dense_reward(obs, info, action)
 
         terminated = info["is_success"]
@@ -142,13 +142,12 @@ class RobotArmPickPlaceEnv(gym.Env):
         return obs, reward, terminated, truncated, info
 
     # ==========================================================
-    # FİZİKSEL TEMAS ALGILAMA
+    # PHYSICAL CONTACT DETECTION
     # ==========================================================
     def _get_contact_info(self):
         """
-        PyBullet getContactPoints ile gripper parmaklarının
-        şişeye gerçekten dokunup dokunmadığını tespit eder.
-        Hack-proof: fiziksel temas yalanlanamaz.
+    PyBullet with getContactPoints detects whether the gripper's fingers actually touched the bottle. 
+    Hack-proof: physical contact cannot be denied.
         """
         sol_contacts = p.getContactPoints(
             bodyA=self.robot_id, bodyB=self.bottle_id,
@@ -172,7 +171,7 @@ class RobotArmPickPlaceEnv(gym.Env):
         }
 
     # ==========================================================
-    # DENSE REWARD (v4 — temas bazlı, tek seferlik)
+    # DENSE REWARD (v4 — contact-based, one-time offer)
     # ==========================================================
     def _compute_dense_reward(self, obs, info, action):
         w = cfg.REWARD_WEIGHTS
@@ -201,7 +200,7 @@ class RobotArmPickPlaceEnv(gym.Env):
         if contact["single_contact"] and gripper_is_closed:
             reward += w["gripper_close_contact"]
 
-        # --- TEMAS VE KAVRAMA ÖDÜLLERİ ---
+        # --- CONTACT AND GRIP AWARDS ---
         if contact["single_contact"] and not self._flag_single_contact:
             reward += w["single_contact_bonus"]
             self._flag_single_contact = True
@@ -214,7 +213,7 @@ class RobotArmPickPlaceEnv(gym.Env):
             reward += w["grasp_bonus"]
             self._flag_grasp = True
 
-        # Kaldırma ve Yükseklik
+        # Lifting and Height
         if bottle_height > cfg.LIFT_HEIGHT and not self._flag_lift:
             reward += w["lift_bonus"]
             self._flag_lift = True
@@ -222,24 +221,24 @@ class RobotArmPickPlaceEnv(gym.Env):
         if bottle_height > 0.01:
             reward += w["height_bonus"]  
 
-        # Hedefe taşıma (Kaldırılmışsa)
+        # Move to destination (if lifted)
         if self._bottle_was_lifted:
             reward += w["distance_to_goal"] * info["distance_to_goal"]
 
         if info["is_success"]:
             reward += w["success_bonus"]
 
-        # --- YENİ: SÜRÜKLEME VE DEVİRME CEZALARI AKTİF ---
+        # --- NEW: PENALTIES FOR DRAG AND TILTING ARE ACTIVE ---
         bottle_pos = obs["achieved_goal"]
         horizontal_movement = np.linalg.norm(bottle_pos[:2] - self._prev_bottle_pos[:2])
         z_drop = self._prev_bottle_pos[2] - bottle_pos[2]
 
         if not self._flag_grasp:
-            # Sürüklenirse veya devrilirse anında ceza!
+            # Immediate penalty if it slides or tips over!
             if z_drop > 0.01 or (horizontal_movement > 0.01 and bottle_height < cfg.LIFT_HEIGHT):
                 reward += w["knock_penalty"]
 
-        # Şişe yerdeyken yatayda oynatılırsa (kendine çekerse) ceza
+        # If the bottle is moved horizontally (pulled towards itself) while it is on the ground, there is a penalty.
         if horizontal_movement > 0.005 and bottle_height < cfg.LIFT_HEIGHT:
             reward += w["push_penalty"]
 
@@ -293,23 +292,23 @@ class RobotArmPickPlaceEnv(gym.Env):
         bottle_pos = np.array(bottle_pos)
         distance = np.linalg.norm(bottle_pos - self.goal_position)
 
-        # --- YENİ: ŞİŞENİN MERKEZİNİ HEDEFLEME ---
-        # Şişenin boyu 0.10, tam ortası Z ekseninde +0.05 yukarısıdır.
+        # --- NEW: TARGETING THE CENTER OF THE BOTTLE ---
+        # The bottle is 0.10 meters tall, and its center is +0.05 meters above the Z-axis.
         bottle_center = bottle_pos.copy()
         bottle_center[2] += cfg.BOTTLE_HEIGHT / 2.0  
 
-        # Gripper parmaklarının orta noktasını al
+        # Get mid point for gripper fingers
         state_sol = p.getLinkState(self.robot_id, cfg.GRIPPER_JOINT_INDICES[0], physicsClientId=self.physics_client)
         state_sag = p.getLinkState(self.robot_id, cfg.GRIPPER_JOINT_INDICES[1], physicsClientId=self.physics_client)
         gripper_midpoint = (np.array(state_sol[0]) + np.array(state_sag[0])) / 2.0
         
-        # Mesafeyi şişenin dibine değil, ORTASINA göre hesapla
+        # Calculate the distance based on the MIDDLE of the bottle, not the bottom.
         ee_to_bottle = np.linalg.norm(gripper_midpoint - bottle_center)
         
-        # Şişenin ortasına 4 cm yaklaştıysa hizalanmış say
+        # It's considered aligned if it's within 4 cm of the bottle's center.
         is_aligned = ee_to_bottle < 0.04 
 
-        # Parmakların kapanma durumu
+        # Gripper finger closing position
         g_sol = p.getJointState(self.robot_id, cfg.GRIPPER_JOINT_INDICES[0], physicsClientId=self.physics_client)[0]
         g_sag = p.getJointState(self.robot_id, cfg.GRIPPER_JOINT_INDICES[1], physicsClientId=self.physics_client)[0]
         is_squeezing = (g_sol < 0.20) and (g_sag > -0.20)
@@ -336,7 +335,7 @@ class RobotArmPickPlaceEnv(gym.Env):
         }
 
     # ==========================================================
-    # AKSİYON (delta-based)
+    # ACTION (delta-based)
     # ==========================================================
     def _apply_action(self, action):
         for i, joint_idx in enumerate(cfg.ARM_JOINT_INDICES):
@@ -376,7 +375,7 @@ class RobotArmPickPlaceEnv(gym.Env):
             )
 
     # ==========================================================
-    # NESNE OLUŞTURMA
+    # OBJECT CREATION
     # ==========================================================
     def _create_table(self):
         half_extents = [s / 2 for s in cfg.TABLE_SIZE]

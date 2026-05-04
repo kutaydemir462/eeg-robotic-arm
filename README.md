@@ -32,25 +32,6 @@ An end-to-end system for controlling a commercial robotic arm using EEG brain si
 | **RL Algorithm** | SAC (Soft Actor-Critic) + HER, trained in PyBullet simulation |
 | **Goal** | Map EEG brain signals → arm movement via trained RL policy |
 
----
-
-## 📁 Repository Structure
-
-```
-eeg-robotic-arm/
-│
-├── keyboard_control_codes/        # Keyboard-based arm control
-│
-├── ML_Codes/                      # Reinforcement learning pipeline
-│   ├── config.py                  # Central config: joints, rewards, SAC hyperparams
-│   ├── train.py                   # SAC + HER training with curriculum learning
-│   ├── robot_arm_env.py           # Custom Gymnasium environment
-│   ├── remote_control_with_api.py         # FastAPI server with async command queue
-│   ├── remote_control_with_controller.py  # Gyroscope/motion controller input
-│   └── robot_state.json           # Persisted robot position state
-│
-└── README.md
-```
 
 ---
 
